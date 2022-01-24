@@ -23,7 +23,8 @@ class TasksController < ApplicationController
   def overdue
     tasks = Task.select{|t| t.user == current_user}
     date = Date.today
-    @overdue_tasks = Task.where("due_date < ?", date)
+    all_overdue_tasks = Task.where("due_date < ?", date)
+    @overdue_tasks = all_overdue_tasks.where({is_complete: false})
   end
 
   # GET /tasks/1 or /tasks/1.json
