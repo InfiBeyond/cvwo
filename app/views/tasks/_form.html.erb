@@ -1,0 +1,54 @@
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+
+  <div class="field">
+    <%= form.label :title%>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Completed?"%>
+    <%= form.check_box :is_complete, value: false %>
+  </div>
+
+  <div class="field">
+    <%= form.label :due_date, style: "display: block" %>
+    <%= form.date_field :due_date %>
+  </div>
+
+<% if Category.select{|c| c.user == current_user} != nil %>
+  <div class="field">
+    <%= form.label :categories, style: "display: block" %>
+    <%= form.collection_check_boxes :category_ids, Category.select{|c| c.user == current_user}, :id, :name, {}, {multiple: true } do |b|%>
+      <%= b.check_box %>
+        <span class="form-check-input" type="checkbox"></span>
+      <%= b.text %>
+        <span class="form-check-label"></span>
+    <% end %>
+  </div>
+  <% else %>
+  <% end %>
+
+  <div>
+    <%= form.number_field :user_id, id: :task_user_id, value:current_user.id, type: :hidden %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

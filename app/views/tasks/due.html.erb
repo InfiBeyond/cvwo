@@ -1,0 +1,20 @@
+<script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+
+
+<h2 style="font-family: 'DejaVu', monospace;">Due in 7 days</h2>
+
+<p style="color: #03919b"><%= notice %></p>
+
+<% if @due_tasks != nil %>
+  <div class="card-columns", style="display: inline-block; column-count: 5;">
+    <% @due_tasks.each do |task| %>
+      <tr>
+        <%= render task %>      
+      </tr>
+    <% end %>
+  </div>
+<% else %>
+  <p>Hooray! You're all done!🎉</p>
+<% end %>
+
+</table>

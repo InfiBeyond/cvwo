@@ -1,0 +1,35 @@
+*{
+  font-family: 'DejaVu', monospace;
+}
+
+.show {
+  display: inline-flex;
+}
+.show a{
+  text-decoration: none;
+  color: #333;
+  display: inline;
+}
+
+.show-link{
+  margin-top: 10px;
+  color: #333;
+  display: inline;
+  padding-left: 50px;
+}
+
+.show a:hover, .show-button:hover{
+  text-decoration: none;
+  color: #d70f64;
+  cursor: pointer;
+}
+
+.show-button {
+  padding-left: 25px;
+  background: none!important;
+  border: none;
+  padding: !important;
+  cursor: pointer;
+  color: #333;
+  display: inline;
+}

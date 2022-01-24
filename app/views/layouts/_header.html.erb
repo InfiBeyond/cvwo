@@ -1,0 +1,38 @@
+<script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="app/assets/stylesheets/header.css">
+
+<nav class="navbar navbar-expand-lg navbar-top sticky-top">
+  <div class="container-fluid">
+    <%= link_to 't <i class="fas fa-meteor"></i> d o'.html_safe, root_path, class:'navbar-brand'%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <div class="welcome-text">
+        <span class="navbar-text">
+           Hello, <%= current_user.email %>!
+        </span>
+      </div>
+
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item top-item">
+            <%= link_to 'Task overview', root_path, class:"nav-link top-link" %>
+          </li>
+          <li class="nav-item top-item">
+            <%= link_to 'Add task', new_task_path, class:"nav-link top-link" %>
+          </li>
+          <li class="nav-item top-item">
+            <%= link_to 'Add category', new_category_path, class:"nav-link top-link" %>
+          </li>
+          <li class="nav-item top-item right1">
+          <%= link_to '<i class="fas fa-user-astronaut fa-lg"></i>'.html_safe, edit_user_registration_path, class:"nav-link top-link right" %>
+        </li>
+        <li class="nav-item top-item right2">
+            <%= button_to'<i class="fas fa-sign-out-alt fa-lg"></i>'.html_safe, destroy_user_session_path, class:"nav-link button top-link right", method: :delete %>
+        </li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+

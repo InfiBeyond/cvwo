@@ -1,0 +1,48 @@
+<script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="app/assets/stylesheets/task_index.css">
+<div id="<%= dom_id task %>">
+  <% if task.user == current_user %>
+    <div class="card task-card" style=" width: 18.5vw;">
+      <div class="card-body">
+        <p class="card-title">
+            <strong class="title"><%= task.title %></strong>
+            <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_task_path(task), style:"font-size: 15px;"%>
+        </p>
+
+        <p class="card-text">
+          <%= task.description %>
+        </p>
+
+        <% if task.due_date != nil %>
+          <p>
+            <strong>Due date:</strong>
+            <%= task.due_date %>
+          </p>
+        <% else %>
+        <% end %>
+
+
+        <% if task.is_complete == true %>
+        <p>
+          <strong>Completion status:</strong>
+          <i class="fas fa-check", style="color: #03919b;"></i>
+        </p>
+        <% else %>
+          <p>
+            <strong>Completion status:</strong>
+            <i class="fas fa-times", style="color: #d70f64;"></i>
+          </p>
+        <% end %>
+
+        <p>
+          <%= render task.categories %>
+        </p>
+
+        <%= button_to 'Delete task', task, method: :delete, class:"card-button" %>
+      </div>
+    </div>
+  <% else %>
+  <% end %>
+
+</div>

@@ -1,0 +1,22 @@
+<script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="app/assets/stylesheets/show_category.css">
+<div class="show">
+  <h2 style="font-family: 'DejaVu', monospace;"><%= render @category%></h2>
+
+  <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_category_path(@category), class:"show-link" %> 
+
+  <%= button_to '<i class="fas fa-trash"></i>'.html_safe, @category, method: :delete, class:"show-button show-link" %>
+
+</div>
+
+<p style="color: green"><%= notice %></p>
+
+<% if @category.tasks.empty? == false %>
+  <div class="card-columns", style="display: inline-block; column-count: 5;">
+    <%= render @category.tasks %>
+  </div>
+<% else %>
+  <p>Hooray! You're all done!🎉</p>
+<% end %>
+
+ 

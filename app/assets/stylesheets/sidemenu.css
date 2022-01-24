@@ -1,0 +1,63 @@
+.sidebar{
+	position: fixed;
+	padding: 0;
+	left: 0;
+	padding-top: 10px;
+	background-color: #03919b;
+  background-image: linear-gradient(315deg, #d70f64 -5%, #03919b 74%);
+
+	font-family: 'DejaVu', monospace;
+	width: 15vw;
+	height: 100%;
+	overflow: hidden;
+	color: #fff;
+}
+
+.menu-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	position: relative;
+}
+
+.menu-item {
+	color: #fff;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	line-height: 20px;
+}
+
+.menu-item a{
+	padding: 10px 15px 10px 38px;
+	display: block;
+	color: #fff;
+}
+
+.menu-item form[action="/categories"]{
+	padding: 10px 15px 10px 38px;
+	display: block;
+}
+
+.menu-item input{
+	width: 90%;
+	background-color: rgba(255,255,255,0.25);
+	border-radius: 5px;
+	border:none;
+	color: #fff;
+}
+
+.menu-item input[type="submit"]{
+  background-color: rgba(255,255,255,0.25);
+  border: none;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.menu-item a:hover {
+	text-decoration: none; 
+  color: #d70f64;
+  cursor: pointer;
+}
+

@@ -1,0 +1,29 @@
+<script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="app/assets/stylesheets/sidemenu.css">
+
+<div class="sidebar">
+	<div class="usermenu">
+		<ul class="menu-list">
+			<li class="menu-item">
+				<%= render "categories/sidemenu_form", category: Category.new(params.permit(:name, :user_id)) %>
+			</li>
+			<li class="menu-item">
+				<%= link_to '<i class="fas fa-tasks"></i> All tasks'.html_safe, root_path %>
+			</li>
+			<li class="menu-item">
+				<%= link_to '<i class="far fa-clock"></i> Incomplete'.html_safe, "/incomplete" %>
+			</li>
+			<li class="menu-item">
+				<%= link_to '<i class="far fa-calendar"></i> Due soon'.html_safe, "/due" %>
+			</li>
+			<li class="menu-item">
+				<%= link_to '<i class="far fa-calendar-times"></i> Overdue'.html_safe, "/overdue" %>
+			</li>
+			<li class="menu-item">
+				<% Category.all.each do |category| %>
+  					<%= render "categories/category", category: category %>
+					<% end %>
+			</li>
+		</ul>
+	</div>
+</div>				

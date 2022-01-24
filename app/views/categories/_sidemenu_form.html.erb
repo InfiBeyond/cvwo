@@ -1,0 +1,26 @@
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Category:",  style: "display: block" %>
+    <%= form.text_field :name, {class:"category"} %>
+  </div>
+
+  <div>
+    <%= form.number_field :user_id, id: :task_user_id, value:current_user.id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= form.submit "Add" %>
+  </div>
+<% end %>

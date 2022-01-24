@@ -1,0 +1,50 @@
+* {
+	font-family: 'DejaVu', monospace; 
+}
+
+.field, .action{
+  font-family: 'DejaVu', monospace; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: block;
+  color: #333;
+}
+
+.field label{
+	font-weight: bold;
+}
+
+.field input, .actions input{ 
+	border-radius: 5px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #333;
+}
+
+.field textarea{
+  border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #333;
+}
+
+.actions input[type="submit"]{
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-color: #d70f64;
+  color: #d70f64;
+  background-color: #fff;
+}
+
+.edit-profile-button {
+  background: none!important;
+  border-radius: 5px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #d70f64;
+  padding: !important;
+  cursor: pointer;
+  align-content: center;
+  color: #d70f64;
+}
