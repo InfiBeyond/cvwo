@@ -1,24 +1,12 @@
-# README
+# CVWO - To do App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Name: **Qin Nanxin**
 
-Things you may want to cover:
+Matriculation Number: **A0245875N**
 
-* Ruby version
+Please try out the app here: https://intense-thicket-30863.herokuapp.com/
 
-* System dependencies
+### Test Account
+Email: **testing@email.com**
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Password: **testing**
